@@ -37,5 +37,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 # Run everything after as non-privileged user.
 USER pptruser
 
+# Add:CircleCI BugFix
+ADD fonts.conf /etc/fonts/
+
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["google-chrome-unstable"]
